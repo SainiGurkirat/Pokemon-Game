@@ -22,7 +22,7 @@ Pokemon battle, a turn based battle game where 2 players chose their Pokemon and
 
 ### Choose Pokemon:
 - Each player selects 3 Pokemon from the pool of 10.
-- Pokemon stats are based set power and the level
+- Pokemon stats are based on their power and the level
 - The moves of each will always stay the same.
 
 ### Battle:
