@@ -7,7 +7,7 @@ Pokemon battle, a turn based battle game where 2 players chose their Pokemon and
 
 ### Player Setup: 
 - Players can select their own names. 
-- layers can set the deafult level they want the Pokemon to be.
+- Players can set the deafult level they want the Pokemon to be.
 ### Battle Mechanics: 
 - Players can attack or swap Pokemon during their turn 
 - Moves have varying power and may apply status effects like Poison, Burn, or Freeze. 
