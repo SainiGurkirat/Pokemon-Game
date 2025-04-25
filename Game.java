@@ -56,20 +56,21 @@ public class Game {
             Pokemon active = current.getActivePokemon();
             Pokemon target = opponent.getActivePokemon();
 
-            System.out.println(current.getName() + "'s active Pokémon:");
+            System.out.println(current.getName() + "'s active Pokemon:");
             active.showStats();
-            System.out.println("\n" + opponent.getName() + "'s active Pokémon:");
+            System.out.println("\n" + opponent.getName() + "'s active Pokemon:");
             target.showStats();
 
             System.out.println("\nChoose an action:");
             System.out.println("1. Attack");
-            System.out.println("2. Swap Pokémon");
+            System.out.println("2. Swap Pokemon");
+            System.out.println("3. Forfeit");
             int actionChoice = userInput.nextInt();
             userInput.nextLine();
             
             // swap pokemon if the player chooses to do so
             if (actionChoice == 2) {
-                System.out.println("Choose a Pokémon to swap to:");
+                System.out.println("Choose a Pokemon to swap to:");
                 // prints all available pokemon on the team
                 current.showAvailablePokemon(); 
                 int swapChoice = userInput.nextInt();
@@ -98,7 +99,7 @@ public class Game {
                 Move chosen = moves[moveChoice - 1];
     
                 // uses the chosen move on the target pokemon
-                System.out.println(active.getName() + " uses " + chosen.getName() + "! it did " + chosen.getPower() + " damage!");
+                System.out.println(current.getName() + "'s' " + active.getName() + " uses " + chosen.getName() + "! it did " + chosen.getPower() + " damage!");
                 chosen.use(target, level);
     
                 // checks if the target pokemon has a status effect and applies it
@@ -110,21 +111,21 @@ public class Game {
                         if (!target.isFainted()) {
                             statusDmg = 3*level/5; 
                             target.takeDamage(statusDmg); 
-                            System.out.println(target.getName() + " is poisoned and takes " + statusDmg + " damage!");
+                            System.out.println(opponent.getName() + "'s' " + target.getName() + " is poisoned and takes " + statusDmg + " damage!");
                         }
                         break;
                     case "Burn":
                         if (!target.isFainted()) {
                             statusDmg = 2*level/5; 
                             target.takeDamage(statusDmg);
-                            System.out.println(target.getName() + " is burned and takes " + statusDmg + " damage!");
+                            System.out.println(opponent.getName() + "'s' " + target.getName() + " is burned and takes " + statusDmg + " damage!");
                         }
                         break;
 
                     // 20% to skip next turn
                     case "Freeze":
                         if (random.nextInt(100) < 20) {
-                            System.out.println(target.getName() + " is frozen solid and can't move next turn!");
+                            System.out.println(opponent.getName() + "'s' " + target.getName() + " is frozen solid and can't move next turn!");
                             skipNextTurn = true;
                         }
                         break;
@@ -220,17 +221,44 @@ public class Game {
     }
 
     static void choosePokemon(Player player, ArrayList<Pokemon> pool) {
+
+
         System.out.println("\n" + player.getName() + ", choose your 3 Pokemon:");
+
+        // lists all pokemon
         for (int i = 0; i < pool.size(); i++) {
             System.out.println((i + 1) + ". " + pool.get(i).getName());
         }
 
+
+        // gives user prompt to pick 3 pokemon one at a time from the pool
         for (int i = 0; i < 3; i++) {
-            System.out.print("Choose Pokemon " + (i + 1) + " by number: ");
-            int choice = userInput.nextInt();
-            userInput.nextLine();
-            Pokemon selected = pool.get(choice - 1);
-            player.addPokemon(new Pokemon(selected.getName(), selected.getHp() / 10, selected.getMoves()));
+            boolean validChoice = false;
+            while(validChoice == false){
+                System.out.print("Choose Pokemon " + (i + 1) + " by number: ");
+                int choice = userInput.nextInt();
+                userInput.nextLine();
+                if(choice >= 10 || choice <= 0){
+                    System.out.println("Please select a valid Pokemon");
+                    continue;
+                }
+                Pokemon selected = pool.get(choice - 1);
+
+                if(selected.selected == false){
+                    validChoice = true;
+                } else {
+                    System.out.println("That Pokemon has already been selected!");
+                }
+                // make sure pokemon cant be selected again
+                selected.setSelected(true);
+
+                // adds selected pokemon to players team
+                player.addPokemon(selected);
+            }
+            
+           
+
+            
         }
     }
 }

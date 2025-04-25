@@ -4,6 +4,7 @@ public class Pokemon {
     private int hp;
     private Move[] moves;
     private String statusEffect;
+    public Boolean selected;
 
     // constructor for pokemon with name, level and moves
     public Pokemon(String name, int level, Move[] moves) {
@@ -13,8 +14,12 @@ public class Pokemon {
         this.hp = level * 10;
         this.moves = moves;
         this.statusEffect = "None";
+        this.selected = false;
     }
 
+    public void setSelected(boolean selected){
+        this.selected = selected;
+  }
     // take damage from an attack
     public void takeDamage(int amount) {
         hp -= amount;
