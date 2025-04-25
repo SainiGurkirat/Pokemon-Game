@@ -28,7 +28,7 @@ Pokemon battle, a turn based battle game where 2 players chose their Pokemon and
 ### Battle:
 - Players take turns to:
     - **Attack**: Use one of the active Pokemon's move.
-    - **Swap Pokemon**: Switch the actice Pokemon on the team (skips your turn).
+    - **Swap Pokemon**: Switch the active Pokemon on the team (skips your turn).
 - Your Pokemon may also be hit with a status effect and be dealt damage or skipping your turn.
 
 ### Win the Game:
