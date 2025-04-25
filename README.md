@@ -39,41 +39,41 @@ Pokemon battle, a turn based battle game where 2 players chose their Pokemon and
 You will be able to select your Pokemon from the pool below
 
 1. Charmander
-- Ember (Power: 15, Effect: Burn)
-- Scratch (Power: 10, Effect: None)
+    - Ember (Power: 15, Effect: Burn)
+    - Scratch (Power: 10, Effect: None)
 
 2. Squirtle
-- Water Gun (Power: 14, Effect: None)
-- Tackle (Power: 9, Effect: None)
+    - Water Gun (Power: 14, Effect: None)
+    - Tackle (Power: 9, Effect: None)
 
 3. Bulbasaur
-- Poison Powder (Power: 0, Effect: Poison)
-- Tackle (Power: 11, Effect: None)
+    - Poison Powder (Power: 0, Effect: Poison)
+    - Tackle (Power: 11, Effect: None)
 
 4. Pikachu
-- Thunder Wave (Power: 0, Effect: Freeze)
-Quick Attack (Power: 12, Effect: None)
+    - Thunder Wave (Power: 0, Effect: Freeze)
+    - Quick Attack (Power: 12, Effect: None)
 
 5. Eevee
-- Bite (Power: 13, Effect: None)
-- Swift (Power: 11, Effect: None)
+    - Bite (Power: 13, Effect: None)
+    - Swift (Power: 11, Effect: None)
 
 6. Jigglypuff
-- Sing (Power: 0, Effect: Freeze)
-- Pound (Power: 10, Effect: None)
+    - Sing (Power: 0, Effect: Freeze)
+    - Pound (Power: 10, Effect: None)
 
 7. Meowth
-- Scratch (Power: 12, Effect: None)
-- Pay Day (Power: 14, Effect: None)
+    - Scratch (Power: 12, Effect: None)
+    - Pay Day (Power: 14, Effect: None)
 
 8. Machop
-- Karate Chop (Power: 15, Effect: None)
-- Low Kick (Power: 13, Effect: None)
+    - Karate Chop (Power: 15, Effect: None)
+    - Low Kick (Power: 13, Effect: None)
 
 9. Gastly
-- Lick (Power: 10, Effect: Freeze)
-- Night Shade (Power: 12, Effect: None)
+    - Lick (Power: 10, Effect: Freeze)
+    - Night Shade (Power: 12, Effect: None)
 
 10. Psyduck
-- Water Pulse (Power: 14, Effect: None)
-- Confusion (Power: 13, Effect: None)
+    - Water Pulse (Power: 14, Effect: None)
+    - Confusion (Power: 13, Effect: None)
