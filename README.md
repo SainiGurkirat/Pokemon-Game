@@ -35,7 +35,7 @@ Pokemon battle, a turn based battle game where 2 players chose their Pokemon and
 - The game ends when one player has no remaining Pokemon.
 - The player with remaining Pokemon left is declared the winner.
 
-## Pokémon Pool
+## Pokemon Pool
 You will be able to select your Pokemon from the pool below
 
 1. Charmander
