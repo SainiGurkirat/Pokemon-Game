@@ -89,7 +89,7 @@ public class Game {
     
                 // prints all available moves for the active pokemon with their power and status effect
                 for (int i = 0; i < moves.length; i++) {
-                    System.out.println((i + 1) + ". " + moves[i].getName() + " (Power: " + moves[i].getPower() + ", Effect: " + moves[i].getStatusEffect() + ")");
+                    System.out.println((i + 1) + ". " + moves[i].getName() + " (Power: " + moves[i].getPower() + ", Effect: " + moves[i].getStatusEffect() + ")" + ", PP: " + moves[i].getPP());
                 }
 
                 // gets player's choice of move
@@ -183,7 +183,8 @@ public class Game {
         // eevee
         pool.add(new Pokemon("Eevee", level, new Move[]{
             new Move("Bite", 13, "None"), 
-            new Move("Swift", 11, "None")}));
+            new Move("Swift", 11, "None")
+        }));
 
         // jigglypuff    
         pool.add(new Pokemon("Jigglypuff", level, new Move[]{
@@ -194,8 +195,8 @@ public class Game {
         // meowth
         pool.add(new Pokemon("Meowth", level, new Move[]{
             new Move("Scratch", 12, "None"), 
-            new Move("Pay Day", 14, "None")}
-            ));
+            new Move("Pay Day", 14, "None")
+        }));
 
         // machop    
         pool.add(new Pokemon("Machop", level, new Move[]{
