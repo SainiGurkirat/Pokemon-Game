@@ -10,7 +10,8 @@ Pokemon battle, a turn based battle game where 2 players chose their Pokemon and
 - Players can set the deafult level they want the Pokemon to be.
 ### Battle Mechanics: 
 - Players can attack or swap Pokemon during their turn 
-- Moves have varying power that is effected by level and may apply status effects like Poison, Burn, or Freeze. 
+- All moves have default PP value of 10 which allows that move to only be played 10 times.
+- Moves are effected by level and may apply status effects like Poison, Burn, or Freeze depending on the move. 
 - Status effects can deal additional damage or skip the opponent's turn.
 
 ## How to Play
