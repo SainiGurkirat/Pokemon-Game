@@ -20,6 +20,12 @@ public class Pokemon {
     public void setSelected(boolean selected){
         this.selected = selected;
   }
+
+    // faints pokemon
+    public void faint(){
+        hp = 0;
+    }
+    
     // take damage from an attack
     public void takeDamage(int amount) {
         hp -= amount;

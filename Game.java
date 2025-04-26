@@ -68,6 +68,21 @@ public class Game {
             int actionChoice = userInput.nextInt();
             userInput.nextLine();
             
+            // if user would like to forfeit
+            if (actionChoice == 3){
+                // loops through entire team and faints all pokemon
+                ArrayList<Pokemon> userTeam = current.getTeam();
+
+                for(Pokemon p: userTeam){
+                    if(!p.isFainted()){
+                        p.faint();
+                    }
+                }
+
+                // breaks out of main loop
+                break;
+            }
+
             // swap pokemon if the player chooses to do so
             if (actionChoice == 2) {
                 System.out.println("Choose a Pokemon to swap to:");
@@ -99,8 +114,8 @@ public class Game {
                 Move chosen = moves[moveChoice - 1];
     
                 // uses the chosen move on the target pokemon
-                System.out.println(current.getName() + "'s' " + active.getName() + " uses " + chosen.getName() + "! it did " + chosen.getPower() + " damage!");
                 chosen.use(target, level);
+                System.out.println(active.getName() + " uses " + chosen.getName() + "! it did " + chosen.getPower() + " damage!");
     
                 // checks if the target pokemon has a status effect and applies it
                 String effect = chosen.getStatusEffect();
@@ -227,7 +242,12 @@ public class Game {
 
         // lists all pokemon
         for (int i = 0; i < pool.size(); i++) {
-            System.out.println((i + 1) + ". " + pool.get(i).getName());
+            if(pool.get(i).selected == false){
+                System.out.println((i + 1) + ". " + pool.get(i).getName());
+            }else{
+                System.out.println(i+1 + ". " + pool.get(i).getName() + " (Selected)");
+            }
+            
         }
 
 
@@ -245,20 +265,22 @@ public class Game {
                 Pokemon selected = pool.get(choice - 1);
 
                 if(selected.selected == false){
+
+                    // make sure pokemon cant be selected again
+                    selected.setSelected(true);
+
+                    // adds selected pokemon to players team
+                    player.addPokemon(selected);
+
                     validChoice = true;
                 } else {
                     System.out.println("That Pokemon has already been selected!");
                 }
-                // make sure pokemon cant be selected again
-                selected.setSelected(true);
 
-                // adds selected pokemon to players team
-                player.addPokemon(selected);
+                
+
+                
             }
-            
-           
-
-            
         }
     }
 }
